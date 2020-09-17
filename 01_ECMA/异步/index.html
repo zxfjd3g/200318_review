@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+    <button id="test">test</button>
+    <div id="content">
+
+    </div>
+    <!-- <script src="./test1.js"></script> -->
+    <!-- <script src="./test2.js"></script> -->
+    <script>
+        document.getElementById('test').onclick = () => {
+            document.getElementById('content').innerHTML = 'xxxx'  // dom渲染  
+            Promise.resolve().then(() => { // promise成功的回调
+                alert('promise')
+            }) 
+            setTimeout(() => {// 定时器回调 
+                alert(document.getElementById('content').innerHTML) 
+            }, 0);
+        }
+
+    </script>
+</body>
+
+</html>
